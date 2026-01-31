@@ -1,7 +1,7 @@
 {
-  "name": "jira-agent",
+  "name": "jira-mcp-server",
   "version": "1.0.0",
-  "description": "AI-powered Jira assistant using LangChain and jira.js",
+  "description": "Jira Model Context Protocol Server",
   "type": "module",
   "main": "index.ts",
   "scripts": {
