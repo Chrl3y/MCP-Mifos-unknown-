@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+  github-mcp:
+    build:
+      context: ./github-mcp
+    container_name: github-mcp-server
+    restart: unless-stopped
+    ports:
+      - "3002:3002"
+    env_file:
+      - ./github-mcp/.env
+
+  slack-mcp:
+    build:
+      context: ./slack-mcp
+    container_name: slack-mcp-server
+    restart: unless-stopped
+    ports:
+      - "3003:3003"
+    environment:
+      - PORT=3003
+    env_file:
+      - ./slack-mcp/.env
+
+  jira-mcp:
+    build:
+      context: ./jira-mcp
+    container_name: jira-mcp-server
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    env_file:
+      - ./jira-mcp/.env
